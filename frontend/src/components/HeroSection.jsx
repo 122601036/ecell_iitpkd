@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import Particles from "react-particles";
 import { loadSlim } from "tsparticles-slim";
-import './heroSection.css';
+import "./heroSection.css";
 const HeroSection = () => {
 
     // This function initializes the particle engine.

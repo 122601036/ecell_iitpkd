@@ -1,5 +1,5 @@
 import "./allevents.css"
-import Footer from "../Footer";
+import Footer from "../components/Footer";
 import startTank from  "../assets/startTank2.webp";
 import ideathon from  "../assets/ideathon1.webp";
 import hackathon from  "../assets/hackathon2.webp";

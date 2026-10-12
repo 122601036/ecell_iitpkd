@@ -1,12 +1,12 @@
-import Home from "./Home"
-import Navbar from "./Navbar";
+import Home from "./components/Home"
+import Navbar from "./components/Navbar";
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AllEvents from "./pages/AllEvents.jsx";
 import Contacts from "./pages/Contacts.jsx";
 import './App.css'
-import RightNavBar from "./RightNavBar.jsx";
-import Footer from "./Footer.jsx";
+import RightNavBar from "./components/RightNavBar.jsx";
+import Footer from "./components/Footer.jsx";
 function App() {
 
   return (
