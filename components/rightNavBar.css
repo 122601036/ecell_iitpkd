@@ -1,0 +1,111 @@
+.right-tab {
+  position: fixed;
+  top: 10%;
+  right: 0;
+  /* Use max-height dvh to prevent it from going off-screen on mobile */
+  max-height: 80dvh; 
+  width: 70%;
+  background-color: #1B2E38;
+  color: white;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  /* Allows scrolling inside the tab if content (like Calendar) is too tall */
+  overflow-y: auto; 
+  transition: transform 0.3s ease;
+  transform: translateX(100%);
+  z-index: 1000;
+  border: 2px solid #EAF6FB;
+  scrollbar-width: thin;
+}
+
+.right-tab.open {
+  transform: translateX(0);
+}
+
+.tab-content {
+  padding: 0;
+  height: 100%;
+}
+
+.toggle-button {
+  position: fixed;
+  top: 42%;
+  right: 0;
+  color: black;
+  border: none;
+  height: 50px;
+  width: 30px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  z-index: 1001;
+}
+
+/* React Big Calendar Overrides */
+.rbc-calendar {
+  font-family: 'Poppins', sans-serif;
+  background-color: #1B2E38;
+  color: #EAF6FB;
+}
+.rbc-timeslot-group {
+  border-color: #444;
+}
+
+.rbc-month-view {
+  background-color: #1B2E38;
+  color: #EAF6FB;
+}
+.rbc-event {
+  color: #EAF6FB;
+  background-color: #EAF6FB;
+}
+
+.rbc-toolbar button {
+  font-family: 'Inter', sans-serif;
+  width: max-content;
+  background-color: #0c0c0c !important;
+  color: #EAF6FB !important;
+}
+.rbc-toolbar button:hover {
+  background-color: #EAF6FB !important;
+  color: #0c0c0c !important;
+}
+.rbc-today {
+  background-color: #636363 !important;
+  color: #EAF6FB !important;
+}
+.rbc-active {
+  border: 3px solid #EAF6FB !important;
+}
+
+@media (max-width: 800px) {
+  .rbc-time-view {
+    width: 20rem !important;
+  }
+}
+
+.rbc-date-cell button {
+  max-width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .right-tab {
+    width: 90%;
+    /* Ensure full height usage on mobile for the tab */
+    max-height: 85dvh; 
+  }
+  .rbc-month-view {
+    height: 25rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .right-tab {
+    width: 100%;
+  }
+  .rbc-row-bg {
+    height: 30px !important;
+  }
+}
