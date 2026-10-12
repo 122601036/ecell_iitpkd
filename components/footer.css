@@ -1,0 +1,148 @@
+footer {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #EAF6FB;
+    width: 100%;
+    box-sizing: border-box;
+    /* Prevent horizontal scroll if content fits tightly */
+    overflow-x: hidden; 
+}
+
+.footer_div1 {
+    margin: 0;
+    padding: 3rem 2rem;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly; /* Distribute columns evenly */
+    align-items: flex-start;
+    /* CRITICAL: Prevent wrapping to keep the side-by-side layout on all screens */
+    flex-wrap: nowrap; 
+    gap: 2rem;
+}
+
+.footer_div2 {
+    color: #EAF6FB;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    padding: 1rem;
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Headings */
+.footer_div1 h3 {
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    /* Prevent long headers from breaking layout if possible */
+    white-space: nowrap; 
+}
+
+/* Links & Text */
+.footer_r2 ul li, .footer_r3 ul li {
+    margin: 0.8rem 0;
+}
+
+.footer_r4 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 300px;
+    margin-top: 0.5rem;
+}
+
+.footer_r4 p, .footer_r4 address {
+    text-align: left;
+    font-style: normal;
+    line-height: 1.5;
+}
+
+/* Social Icons */
+.footer_r2 li > a {
+    display: inline-block;
+}
+
+.footer_r2 a > img {
+    height: 2rem;
+    width: auto;
+    filter: brightness(1.8) saturate(0.1);
+}
+
+li a, .footer_r2 a, .footer_r3 a {  
+    text-decoration: none;
+    color: #e9f7fe !important;
+}
+
+/* Logo Section */
+.footer_r1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center logo */
+    text-align: center;
+}
+
+.ecell-logo-container {
+    background-color: #ECF0F1;
+    padding: 15px;
+    border-radius: 12px;
+    display: inline-block;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.ecell-logo {
+    width: 8rem;
+    height: auto;
+    display: block;
+}
+
+/* ------------------------------------------------------------------ */
+/* RESPONSIVE: Force layout to persist by scaling down elements      */
+/* ------------------------------------------------------------------ */
+
+@media (max-width: 900px) {
+    .footer_div1 {
+        padding: 2rem 1rem;
+        gap: 1rem;
+    }
+    
+    .ecell-logo {
+        width: 6rem;
+    }
+    
+    .footer_div1 h3 {
+        font-size: 1rem;
+    }
+    
+    .footer_r4 p, .footer_r4 address, .footer_r3 li a {
+        font-size: 0.9rem;
+    }
+}
+
+/* Small Screens (Mobile): Keep 4 columns by shrinking text/icons */
+@media (max-width: 600px) {
+    .footer_div1{
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .footer_r2 , .footer_r3{
+        width: 100%;
+    }
+    .footer_r2 ul , .footer_r3 ul{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+    }
+    .footer_r2 ul li h3 , .footer_r3 ul li h3{
+        margin: auto;
+    }
+}

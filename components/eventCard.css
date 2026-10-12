@@ -1,0 +1,145 @@
+
+.content{
+    /* margin-top: 100px; */
+    position: sticky;
+    top: 0;
+    /* height: 25em; */
+    margin-top: 2rem;   
+    margin-bottom: 5rem ;
+    width: auto;
+    display: flex;
+    justify-content: space-around  ;
+    /* border: 2px solid green; */
+    /* align-items: center; */
+}
+
+.card{
+    /* border: 2px solid green; */
+    /* position: sticky;
+    top: 0; */
+    height: 25em;
+    /* margin: 50px auto; */
+    width: 20em;
+    background-color: white;
+    /* margin: 150px 20px; */
+    border-radius: 5px ;
+    box-shadow: 0 -5px 10px black , 0 5px 10px white;
+    color: black;
+}
+.content:nth-child(2){
+    top: 20px;
+}
+.content:nth-child(3){
+    top: 40px;
+}
+.content:nth-child(4){
+    top: 60px;
+}
+/* .content:nth-child(5){
+    top:80px
+}
+.content:nth-child(6){
+    top:100px
+}
+.content:nth-child(7){
+    top:120px
+}
+.content:nth-child(8){
+    top:140px
+}
+.content:nth-child(9){
+    top:160px
+}
+.content:nth-child(10){
+    top:180px
+}
+.content:nth-child(11){
+    top:200px
+}
+.content:nth-child(12){
+    top:240px
+} */
+
+.content > .description{
+    /* background-color: #fbc45e; */
+    height:25rem;
+    width: 25rem;
+    max-width: 25rem;
+    /* text-align: center; */
+    color: #1b1b1b;
+    border: 3px solid white;
+    border-radius:10px;
+    box-shadow: 0 -5px 10px black ;
+    text-align: justify;
+  text-justify: inter-word; /* ensures spacing only happens between words */
+  hyphens: auto;            /* allows breaking long words if needed */
+  line-height: 1.6;         /* improves readability */
+  word-spacing: normal; 
+    /* margin-top: 50%; */
+
+    background: #f46b45;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #eea849, #f46b45);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #eea849, #f46b45); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.description h1{
+    font-size: 1.7em;
+}
+.description p{
+    font-size: 1.3em;
+}
+
+
+
+@media (min-width:700px){
+    .content{
+        margin-top: 7rem ;
+        margin-bottom: 4rem;
+    }
+}
+
+@media (max-width:850px) {
+    /* .content{
+        position: static;
+    } */
+     .card{
+        height: 100px;
+        width: 100px;
+     }
+     .card {
+        margin: 2rem 1rem;
+     }
+     .description{
+        width: 400px;
+     }
+     .description h1{
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+     }
+}
+@media (max-width:700px) {
+    .content{
+        position: static;
+        display: flex;
+        flex-direction:  column;
+        margin: 5rem 0;
+        gap: 2rem  ;
+        align-items: center ;
+    }
+    .card{
+        height: 20rem;
+        width: 20rem;
+        top: auto !important;
+        /* display: none; */
+    }
+    .description{
+        height: 30rem !important;
+        padding-bottom: 1rem ;
+        width: 20rem; 
+        margin: 1rem 1rem;
+    }
+    .homeContent h1{
+        font-size: 2.4rem;
+        padding-left: 0.5em;
+    }
+}
