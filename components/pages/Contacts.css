@@ -1,0 +1,94 @@
+.contact_form {
+    /* Block display ensures the container fills the width, allowing Footer to be full width */
+    display: block; 
+    width: 100%;
+    min-height: 100vh;
+    padding: 0; /* Important: No padding on container to let Footer touch edges */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    /* Margin centers the form card, separate from footer */
+    margin: 8rem auto 5rem auto; 
+    width: 90%;
+    max-width: 600px;
+}
+
+/* Heading alignment */
+.contact_form h1 {
+    text-align: center;
+    color: #fbc45e;
+    margin-bottom: 2rem;
+    font-family: 'reckless', serif;
+}
+
+input, textarea {
+    margin: 15px 0;
+    border-radius: 7px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    width: 100%;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+input {
+    height: 50px;
+}
+
+.btn > button {
+
+    width: 50%;
+    height: 50px;
+    border-radius: 30px; /* Pill shape is more modern */
+    font-family: 'Poppins', sans-serif; /* Switch to Sans-serif for buttons */
+    font-weight: 600;
+    font-size: 1.1rem;
+    
+    /* Gradient Button */
+    background: linear-gradient(90deg, #fbc45e 0%, #eea849 100%);
+    color: #0f2027; /* Dark text on gold button for contrast */
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(251, 196, 94, 0.4); /* Glow shadow */
+
+    /* width: 50%;
+    height: 45px;
+    border-radius: 7px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    background-color: #EAF6FB;
+    color: #1b1b1b;
+    border: none;
+    transition: all 0.3s ease;
+    margin-top: 1rem; */
+}
+
+.btn>button:hover {
+
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(251, 196, 94, 0.6);
+    background: linear-gradient(90deg, #eea849 0%, #fbc45e 100%);
+
+    /* cursor: pointer;
+    background-color: #fbc45e;
+    transform: scale(1.02); */
+}
+
+.btn {
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    form {
+        margin: 6rem auto 4rem auto;
+        width: 95%;
+    }
+    button {
+        width: 70%;
+    }
+}

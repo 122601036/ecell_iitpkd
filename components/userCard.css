@@ -1,0 +1,182 @@
+/* .card_container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+
+/* .user_card{
+    background-color: #ECF0F1; 
+    color: #444444;
+    height: 250px ;
+    width:250px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #3498DB55;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    transition: box-shadow 0.3s ease;
+    margin-bottom: 5rem;
+}
+.user_card:hover {
+  box-shadow: 0 0 25px #3498DB99;
+  } */
+.user_card {
+    /* Remove solid light background */
+    background: rgba(255, 255, 255, 0.03); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+    
+    /* Update text colors for dark background */
+    color: #EAF6FB; 
+    
+    /* Keep dimensions */
+    height: 250px;
+    width: 250px;
+    border-radius: 20px;
+    
+    /* Enhance Shadow for "Glow" effect */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    transition: all 0.4s ease;
+    margin-bottom: 5rem;
+}
+
+.user_card:hover {
+    transform: translateY(-10px); /* Lift up effect */
+    box-shadow: 0 0 30px rgba(251, 196, 94, 0.2); /* Golden glow matching your theme */
+    border-color: rgba(251, 196, 94, 0.5);
+}
+
+.user_card > h3 {
+    color: #fbc45e; /* Change from Navy to Gold */
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.user_card h4 {
+    color: #C5D7E3; /* Lighter blue-grey */
+    margin-bottom: 10px;
+}
+
+
+.user_img{
+    /* color: white; */
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+.image{
+    /* height: 100px; */
+    padding: 0.5rem ;
+    border-radius: 50%;
+    border: 2px solid #2C3E50;
+    /* Primary Accent (Navy/Dark Blue) for image border */
+    /* #1b1b1b */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* .user_card > h3{
+    color: #2C3E50;
+    font-weight: bold;
+}
+.user_card h4{
+    color: #444444;
+    margin-top: 0;
+    margin-bottom: 1rem;
+} */
+.socials{
+    width: 150px;
+    height: 70px;
+    background-color: #3498DB;
+    /* Secondary Accent (Sky Blue) for  */
+    position:absolute ;
+    top:89%;
+    color: #FFFFFF ;
+    /* White text for contrast */
+    padding: 0.4rem 1rem;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    /* Updated gradient to corporate theme: Sky Blue to Dark Blue */
+    background: #2C3E50;  /* fallback for old browsers (Primary Accent) */
+    background: -webkit-linear-gradient(to right, #3498DB, #2C3E50);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3498DB, #2C3E50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.socials h3{
+    text-align: center;
+    width: 100%;
+    color: #FFFFFF;
+    /* White text for button label */
+}
+.socials ul{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    color: #FFFFFF;
+    /* White for social icons */
+    transform: rotate(-150deg);
+    transform-origin: 0;
+    transition: transform 1s ;
+    position: absolute;
+
+    /* Updated gradient to corporate theme: Sky Blue to Dark Blue */
+    background: #2C3E50;  /* fallback for old browsers (Primary Accent) */
+    background: -webkit-linear-gradient(to right, #3498DB, #2C3E50);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3498DB, #2C3E50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.socials:hover h3{
+    visibility: hidden;
+}
+.socials:hover  ul{
+    transform: rotate(0deg);
+    opacity: 1;
+    visibility: visible;
+}
+.card_a , .card_a>img{
+    height: 20px;
+    width: 30px;
+    filter: brightness(0) invert(1);
+    /* Ensures social icons are white against the dark button */
+}
+
+@media (max-width:900px) {
+    .user_card{
+        height:15rem;
+        width: 20rem;
+    }
+    .user_card h4{
+        margin-bottom: 3rem;
+    }
+}
+@media (max-width:800px){
+    .socials h3{
+        visibility: hidden;
+    }
+    .socials ul{
+        transform: rotate(0deg);
+        visibility: visible;
+        opacity: 1;
+        text-align: center;
+    }
+}

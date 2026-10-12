@@ -1,0 +1,35 @@
+/* App{
+  height: 100%;
+  width: 100%;
+} */
+body{
+  margin: 0;
+  padding: 0;
+/* background-color:#1b1c1b; */
+scrollbar-color: #2C5364 #EAF6FB;
+scrollbar-width: none;
+overflow-x: hidden;
+/* color:#fbc45e; */
+/* background-color: #0F2027; */
+/* background: linear-gradient(135deg, #0F2027 0%, #203A43 50%, #2C5364 100%); */
+background: #1B2E38;
+color: #EAF6FB;
+--text-secondary: #d71b1b;
+--border-color: #c71d1d;
+
+/* background-image: url('../public/bg.jpg');
+background-size: cover;
+    background-attachment: fixed;
+    background-position: center; */
+}
+
+.protest-revolution-regular {
+  font-family: "Protest Revolution", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.macondo-regular {
+  font-family: "Macondo", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
