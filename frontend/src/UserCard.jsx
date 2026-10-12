@@ -1,7 +1,7 @@
 import React from 'react'
 import './userCard.css';
-import userLinkedIn from "../src/assets/usercard_lk.svg";
-import userMail from "../src/assets/usercard_mail.svg";
+import userLinkedIn from "./assets/usercard_lk.svg";
+import userMail from "./assets/usercard_mail.svg";
 
 const UserCard = (props) => {
   return (

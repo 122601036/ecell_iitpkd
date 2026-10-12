@@ -1,7 +1,7 @@
 import "./Navbar.css";
 import {NavLink , Link} from "react-router-dom";
 import { useState } from "react";
-import lg from "../src/assets/lg.png"
+import lg from "./assets/lg.png"
 function Navbar(){
     // whenever we are using react-router-dom components we have to wrap our entire app inside Browser router 
     // keeps track of different link and router that we have

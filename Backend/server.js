@@ -1,44 +1,50 @@
-import express, { text } from 'express';
+import express from 'express';
 import cors from 'cors';
 import nodemailer from 'nodemailer';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
 const app = express();
-app.use(cors());
-app.use(express.json()); // Parse JSON body
+app.use(cors({
+  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+  credentials: true
+}));
+app.use(express.json());
 
-app.post('/submit', (req, res) => {
-  const { name, email,subject, message } = req.body;
-  console.log('Received:', { name, email,subject, message });
-  res.json({ success: true });
-
-
-  // sending the mail
-  const transporter = nodemailer.createTransport({
-    service:'gmail',
-    auth:{
-        user:'aryan0312g@gmail.com',
-        pass:'ayaexuvllakicvjp'
-        // user:'112301041@smail.iitpkd.ac.in',
-        // pass:'bstvterxlrchhajn',
-    }
-  });
-
-  const mailOptions = {
-    from :'aryan0312g@gmail.com',
-    to:'aryan0312g@gmail.com',
-    subject:subject,
-    text:message,
-    replyTo:email  
-  };
-
-  transporter.sendMail(mailOptions,(error,info)=>{
-    if(error){
-        console.error("Error occured :",error);
-
-    }
-    else{
-        console.log("Email sent");
-    }
-  })
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
-app.listen(3000, () => console.log('Server running on port 3000'));
+app.post('/submit', async (req, res) => {
+  const { name, email, subject, message } = req.body;
+  console.log('Received:', { name, email, subject, message });
+
+  try {
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
+      }
+    });
+
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_USER,
+      subject: subject,
+      text: message,
+      replyTo: email
+    };
+
+    await transporter.sendMail(mailOptions);
+    console.log("Email sent");
+    res.json({ success: true, message: 'Email sent successfully' });
+  } catch (error) {
+    console.error("Error occurred:", error);
+    res.status(500).json({ success: false, message: 'Failed to send email' });
+  }
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

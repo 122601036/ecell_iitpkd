@@ -1,26 +1,26 @@
 import "./allevents.css"
 import Footer from "../Footer";
-import startTank from  "../../src/assets/startTank2.webp";
-import ideathon from  "../../src/assets/ideathon1.webp";
-import hackathon from  "../../src/assets/hackathon2.webp";
-import startupExpo from  "../../src/assets/startupExpo2.webp";
-import productLaunch from  "../../src/assets/productLaunchChallenge.webp";
-import businessPlan from  "../../src/assets/businessPlanExpo.webp";
+import startTank from  "../assets/startTank2.webp";
+import ideathon from  "../assets/ideathon1.webp";
+import hackathon from  "../assets/hackathon2.webp";
+import startupExpo from  "../assets/startupExpo2.webp";
+import productLaunch from  "../assets/productLaunchChallenge.webp";
+import businessPlan from  "../assets/businessPlanExpo.webp";
 
 
-import rocket from "../../src/assets/rocket.mp4";
-// import idea from "../../src/assets/ideathon.mp4";
-import readMore from "../../src/assets/read-more.mp4";
-// import hackathonVideo from "../../src/assets/hackathon.mp4";
-// import business from "../../src/assets/business.mp4";
-import investment from "../../src/assets/investment.mp4";
-import mun from "../../src/assets/mun.mp4";
-import networking from "../../src/assets/networking.mp4";
-// import productLaunch from "../../src/assets/productLaunch.mp4";
-import techWork from "../../src/assets/techWorkshop.mp4";
-import techXpo from "../../src/assets/techXpo.mp4";
-import trading from "../../src/assets/trading.mp4";
-// import startupExpo from "../../src/assets/startupExpo.mp4";
+import rocket from "../assets/rocket.mp4";
+// import idea from "../assets/ideathon.mp4";
+import readMore from "../assets/read-more.mp4";
+// import hackathonVideo from "../assets/hackathon.mp4";
+// import business from "../assets/business.mp4";
+import investment from "../assets/investment.mp4";
+import mun from "../assets/mun.mp4";
+import networking from "../assets/networking.mp4";
+// import productLaunch from "../assets/productLaunch.mp4";
+import techWork from "../assets/techWorkshop.mp4";
+import techXpo from "../assets/techXpo.mp4";
+import trading from "../assets/trading.mp4";
+// import startupExpo from "../assets/startupExpo.mp4";
 
 function AllEvents(){
     return <>
