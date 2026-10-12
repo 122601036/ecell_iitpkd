@@ -1,16 +1,16 @@
 import React, { useEffect, useRef } from "react";
-import "./home.css";
+import "../components/home.css";
 import UserCard from "./UserCard";
 import Footer from "./Footer";
 import Carousel from "./Carousel.jsx";
 import RightNavBar from "./RightNavBar.jsx";
 import Spline from '@splinetool/react-spline';
 // Import Assets - Ensure these paths match your folder structure
-import arrow from "../src/assets/arrow2.svg";
-import ecellHome from '../src/assets/ecell_home2.png';
+import arrow from "../assets/arrow2.svg";
+import ecellHome from '../assets/ecell_home2.png';
 
 // Import Data
-import teamData from "../Backend/teamData26.js";
+import teamData from "../teamData26.js";
 import HeroSection from "./HeroSection.jsx";
 import EventFeed from "./EventFeed.jsx";
 

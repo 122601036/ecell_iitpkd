@@ -3,11 +3,11 @@ import './footer.css'
 import { NavLink ,Link } from 'react-router-dom';
 
 // importing images
-import ig from "../src/assets/ig.svg";
-import linkedin from "../src/assets/linkedin.svg";
-import twitter from "../src/assets/twitter.svg";
-import yt from "../src/assets/yt.svg"
-import ecell_logo from "../src/assets/lg.png"
+import ig from "../assets/ig.svg";
+import linkedin from "../assets/linkedin.svg";
+import twitter from "../assets/twitter.svg";
+import yt from "../assets/yt.svg"
+import ecell_logo from "../assets/lg.png"
 const Footer = () => {
     const date = new Date().getFullYear();
   return (

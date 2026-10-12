@@ -5,16 +5,16 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import ideathon1 from '../src/assets/ideathon1.webp';
-import hackathon2 from '../src/assets/hackathon2.webp';
-import startTank from '../src/assets/startTank2.webp';
-import productLaunch from  "../src/assets/productLaunchChallenge.webp"
-// import rocket from "../src/assets/rocket.mp4";
-// import idea from "../src/assets/ideathon.mp4";
-import readMore from "../src/assets/read-more.mp4";
-// import hackathonVideo from "../src/assets/hackathon.mp4";
-// import ideathon from '../src/assets/ideathon1.jpg'
-import './carousel.css';
+import ideathon1 from '../assets/ideathon1.webp';
+import hackathon2 from '../assets/hackathon2.webp';
+import startTank from '../assets/startTank2.webp';
+import productLaunch from  "../assets/productLaunchChallenge.webp"
+// import rocket from "../assets/rocket.mp4";
+// import idea from "../assets/ideathon.mp4";
+import readMore from "../assets/read-more.mp4";
+// import hackathonVideo from "../assets/hackathon.mp4";
+// import ideathon from '../assets/ideathon1.jpg'
+import '../components/carousel.css';
 const Carousel = () => {
   return (
      <div id="carousel-container">

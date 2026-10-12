@@ -1,8 +1,11 @@
 import './Contacts.css';
 import {useForm} from 'react-hook-form';
 import axios from 'axios';
-import Footer from '../Footer';
+import Footer from '../components/Footer';
 import { ToastContainer, toast } from 'react-toastify';
+
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+
 function Contacts(){
     const {
     register,
@@ -20,7 +23,7 @@ function Contacts(){
     // const formData = new FormData(e);
     try{
         const response = await axios.post(
-            'http://localhost:5174/submit',
+            `${API_URL}/submit`,
             // Object.fromEntries(formData.entries())
             e
         );
