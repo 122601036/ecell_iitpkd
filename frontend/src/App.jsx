@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AllEvents from "./pages/AllEvents.jsx";
 import Contacts from "./pages/Contacts.jsx";
 import './App.css'
-import RightNavBar from "./components/RightNavBar.jsx";
 import Footer from "./components/Footer.jsx";
 function App() {
 
