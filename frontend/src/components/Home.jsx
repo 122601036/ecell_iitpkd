@@ -3,7 +3,6 @@ import "../components/home.css";
 import UserCard from "./UserCard";
 import Footer from "./Footer";
 import Carousel from "./Carousel.jsx";
-import RightNavBar from "./RightNavBar.jsx";
 import Spline from '@splinetool/react-spline';
 // Import Assets - Ensure these paths match your folder structure
 import arrow from "../assets/arrow2.svg";
@@ -88,10 +87,6 @@ function Home(){
             </div>
 
             <div className="events slideUpElt">
-                {/* <div id="calendar-in-mainpage">
-                    <h1>Events Calendar</h1>
-                    <RightNavBar/>
-                </div> */}
                 <EventFeed/>
             </div>
 
