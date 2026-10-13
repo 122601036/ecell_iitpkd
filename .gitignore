@@ -15,7 +15,7 @@ frontend/.env
 backend/.env
 
 # Logs
-logs
+logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -24,6 +24,7 @@ yarn-error.log*
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
+!.vscode/settings.json
 .idea/
 *.swp
 *.swo
@@ -38,3 +39,25 @@ coverage/
 # Misc
 *.pem
 .cache/
+
+# Kilo / Kilocode
+.kilo/
+.kilocode/
+.kilo-config/
+
+# Vite
+.vite/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+*.egg-info/
+
+# Backend specific
+Backend/__pycache__/
+Backend/*.pyc
