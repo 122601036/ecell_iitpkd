@@ -60,14 +60,15 @@ function Home(){
             <div className="intro slideUpElt" ref={introContent} >
                 <h1>About Us</h1>
                 <p className="text">
-                    E-Cell IIT Palakkad is a student-driven initiative that nurtures the spirit of entrepreneurship through events, mentorship, and hands-on support.
+                    <b>One Powerful Idea Can Change the World. Your Journey Starts Here.</b>
+                    The Entrepreneurship Cell (E-Cell) at IIT Palakkad is where ideas find direction, ambition meets opportunity, and innovation takes its first step toward reality.
                     At the core is <b>SURGE</b> ("Startup Upscaling and Resource Growth Engine")—a dynamic team of students, faculty, alumni, and experts dedicated to turning ideas into startups.
                 </p>
                 <h2>Got an idea? SURGE will help you:</h2>
                 <div className="list">
                     <ul className="text">
-                        <li> Build Your Team – Connect with coders, designers, and doers.</li>
-                        <li> Get Mentored – Guidance from industry pros, professors, and alumni.</li>
+                        <li> Build a Team – Connect with coders, designers, and doers.</li>
+                        <li> Get Mentorship – Guidance from industry pros, professors, and alumni.</li>
                         <li> Develop an MVP – Shape your idea into a working prototype.</li>
                         <li> Pitch to Investors – Gain access to funding and incubation.</li>
                     </ul>
@@ -77,8 +78,7 @@ function Home(){
             <div className="vision slideUpElt">
                 <h1>Our Vision</h1> 
                 <p className="text">
-                    The Entrepreneurship Cell of IIT Palakkad envisions building a thriving entrepreneurial ecosystem within the institute. We aim to empower students by providing them with real-world exposure, mentorship, and resources necessary to transform ideas into impactful ventures.
-                </p>
+                    The Entrepreneurship Cell of IIT Palakkad envisions building a thriving entrepreneurial ecosystem within the institute. We aspire to empower students to think beyond the ordinary, challenge the status quo, and turn their ideas into ventures that create meaningful impact.                </p>
             </div>
 
             <div className="events-activities slideUpElt">
