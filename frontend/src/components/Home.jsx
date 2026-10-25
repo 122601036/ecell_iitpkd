@@ -18,7 +18,7 @@ function Home(){
 
     function handleClick(){
         if(introContent.current){
-            introContent.current.scrollIntoView({ behavior: "smooth" });
+            introContent.current.scrollIntoView({ behavior: "smooth" });u
         }
     }
 
