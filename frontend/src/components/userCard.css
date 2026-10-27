@@ -1,182 +1,243 @@
-/* .card_container{
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
-
-/* .user_card{
-    background-color: #ECF0F1; 
-    color: #444444;
-    height: 250px ;
-    width:250px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px #3498DB55;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    position: relative;
-    transition: box-shadow 0.3s ease;
-    margin-bottom: 5rem;
-}
-.user_card:hover {
-  box-shadow: 0 0 25px #3498DB99;
-  } */
 .user_card {
-    /* Remove solid light background */
-    background: rgba(255, 255, 255, 0.03); 
+    /* changed: sizes live in variables so hover/mobile rules can reuse them */
+    --card-h: 400px;
+    /* compact height (no wasted space below the role) */
+    --extra: 64px;
+    /* how much the card grows on hover to fit the icons */
+
+    background: linear-gradient(160deg, rgba(251, 196, 94, 0.06), rgba(52, 152, 219, 0.05));
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
-    
-    /* Update text colors for dark background */
-    color: #EAF6FB; 
-    
-    /* Keep dimensions */
-    height: 250px;
-    width: 250px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(251, 196, 94, 0.35);
+
+    color: #EAF6FB;
+
+    height: var(--card-h);
+    width: 270px;
+    padding: 1rem 0;
+    /* changed: no reserved bottom space */
     border-radius: 20px;
-    
-    /* Enhance Shadow for "Glow" effect */
+
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    /* changed: content stays put while the card grows downward */
     align-items: center;
+    gap: 0.6rem;
     position: relative;
-    transition: all 0.4s ease;
-    margin-bottom: 5rem;
+    transition: height 0.45s ease, margin-bottom 0.45s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    margin-bottom: 3rem;
 }
 
+/* changed: card grows from the bottom; margin shrinks by the same amount
+   so the cards in the rows below don't get pushed down */
 .user_card:hover {
-    transform: translateY(-10px); /* Lift up effect */
-    box-shadow: 0 0 30px rgba(251, 196, 94, 0.2); /* Golden glow matching your theme */
+    height: calc(var(--card-h) + var(--extra));
+    margin-bottom: calc(3rem - var(--extra));
+    z-index: 2;
+    box-shadow: 0 0 30px rgba(251, 196, 94, 0.2);
     border-color: rgba(251, 196, 94, 0.5);
 }
 
-.user_card > h3 {
-    color: #fbc45e; /* Change from Navy to Gold */
+.user_card>h3 {
+    color: #fbc45e;
     font-weight: bold;
     letter-spacing: 0.5px;
+    font-size: 1.15rem;
+    text-align: center;
+    margin: 0.3rem 0 0;
+}
+
+.user_card>h3::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 2px;
+    margin: 0.4rem auto 0;
+    background: linear-gradient(to right, #fbc45e, transparent);
+    border-radius: 2px;
+    transition: width 0.4s ease;
+}
+
+.user_card:hover>h3::after {
+    width: 80px;
 }
 
 .user_card h4 {
-    color: #C5D7E3; /* Lighter blue-grey */
-    margin-bottom: 10px;
-}
-
-
-.user_img{
-    /* color: white; */
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-}
-.image{
-    /* height: 100px; */
-    padding: 0.5rem ;
-    border-radius: 50%;
-    border: 2px solid #2C3E50;
-    /* Primary Accent (Navy/Dark Blue) for image border */
-    /* #1b1b1b */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-/* .user_card > h3{
-    color: #2C3E50;
-    font-weight: bold;
-}
-.user_card h4{
-    color: #444444;
-    margin-top: 0;
-    margin-bottom: 1rem;
-} */
-.socials{
-    width: 150px;
-    height: 70px;
-    background-color: #3498DB;
-    /* Secondary Accent (Sky Blue) for  */
-    position:absolute ;
-    top:89%;
-    color: #FFFFFF ;
-    /* White text for contrast */
-    padding: 0.4rem 1rem;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-
-    /* Updated gradient to corporate theme: Sky Blue to Dark Blue */
-    background: #2C3E50;  /* fallback for old browsers (Primary Accent) */
-    background: -webkit-linear-gradient(to right, #3498DB, #2C3E50);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #3498DB, #2C3E50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-}
-.socials h3{
+    color: #C5D7E3;
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
     text-align: center;
-    width: 100%;
-    color: #FFFFFF;
-    /* White text for button label */
+    padding: 0 1rem;
 }
-.socials ul{
+
+
+.user_img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 9 / 10;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 16px;
+    display: block;
+    filter: grayscale(30%) brightness(0.95);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.user_card:hover .user_img {
+    filter: grayscale(0%) brightness(1.05);
+    transform: scale(1.03);
+}
+
+.image {
+    width: 100%;
+    padding: 0 1rem;
+    border-radius: 0;
+    border: none;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    list-style: none;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    visibility: hidden;
-    color: #FFFFFF;
-    /* White for social icons */
-    transform: rotate(-150deg);
-    transform-origin: 0;
-    transition: transform 1s ;
+}
+
+/* =========================================
+   SOCIALS: icons live in the extra space at the
+   bottom and pop in once the card has grown
+   ========================================= */
+.socials {
     position: absolute;
-
-    /* Updated gradient to corporate theme: Sky Blue to Dark Blue */
-    background: #2C3E50;  /* fallback for old browsers (Primary Accent) */
-    background: -webkit-linear-gradient(to right, #3498DB, #2C3E50);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #3498DB, #2C3E50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    top: auto;
+    bottom: 1rem;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    background: none;
+    border-radius: 0;
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.socials:hover h3{
-    visibility: hidden;
+.socials h3 {
+    display: none;
 }
-.socials:hover  ul{
-    transform: rotate(0deg);
+
+.socials ul {
+    position: static;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: auto;
+    background: none;
     opacity: 1;
     visibility: visible;
+    transform: none;
 }
-.card_a , .card_a>img{
+
+.socials li {
+    opacity: 0;
+    transform: translateY(18px) scale(0.8);
+    pointer-events: none;
+    /* hidden icons can't be clicked by accident */
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.user_card:hover .socials li {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition-delay: 0.2s;
+    /* wait for the card to grow first */
+}
+
+.user_card:hover .socials li:nth-child(2) {
+    transition-delay: 0.28s;
+}
+
+.user_card:hover .socials li:nth-child(3) {
+    transition-delay: 0.36s;
+}
+
+.user_card:hover .socials li:nth-child(4) {
+    transition-delay: 0.44s;
+}
+
+.card_a {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card_a>img {
+    width: 20px;
     height: 20px;
-    width: 30px;
     filter: brightness(0) invert(1);
-    /* Ensures social icons are white against the dark button */
+    transition: filter 0.3s ease;
+}
+
+.card_a:hover {
+    background: #fbc45e;
+    border-color: #fbc45e;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(251, 196, 94, 0.4);
+}
+
+.card_a:hover>img {
+    filter: brightness(0);
+}
+
+.team-grid> :nth-child(3n + 2) {
+    animation-delay: 0.15s;
+}
+
+.team-grid> :nth-child(3n + 3) {
+    animation-delay: 0.3s;
 }
 
 @media (max-width:900px) {
-    .user_card{
-        height:15rem;
-        width: 20rem;
-    }
-    .user_card h4{
-        margin-bottom: 3rem;
+    .user_card {
+        --card-h: 27rem;
+        --extra: 4rem;
+        width: 18rem;
     }
 }
-@media (max-width:800px){
-    .socials h3{
-        visibility: hidden;
+
+/* touch screens / small windows: no hover, so the card is always expanded with icons showing */
+@media (hover: none),
+(max-width:800px) {
+
+    .user_card,
+    .user_card:hover {
+        height: calc(var(--card-h) + var(--extra));
+        margin-bottom: 3rem;
     }
-    .socials ul{
-        transform: rotate(0deg);
-        visibility: visible;
+
+    .socials li,
+    .user_card:hover .socials li {
         opacity: 1;
-        text-align: center;
+        transform: none;
+        pointer-events: auto;
+        transition-delay: 0s;
     }
 }
