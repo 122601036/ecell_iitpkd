@@ -1,0 +1,42 @@
+.newcarousel-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    /* adjust if you want it shorter */
+    overflow: hidden;
+    background: #0f2027;
+    /* fallback while the wave loads */
+    margin-top: 2rem;
+}
+
+/* Wave layer: behind everything, never blocks clicks */
+.newcarousel-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.newcarousel-bg>*,
+.newcarousel-bg canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Same look as the old .events-activities box, on top of the wave */
+.newcarousel-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+@media (max-width: 500px) {
+    .newcarousel-content {
+        padding: 4rem 0.5rem;
+    }
+}
